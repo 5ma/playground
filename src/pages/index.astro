@@ -16,15 +16,19 @@ const newsEntries = (await getCollection('news')).toSorted(
   <main class="wrapper">
     <Hero title={title} description={description} />
 
-    <section>
-      <ul class="auto-grid-80 mt-4 gap-x-8 gap-y-12">
+    <section class="@container/section">
+      <ul
+        class="list-container auto-grid-40 mt-4 gap-x-8 gap-y-12 @4xl:grid-cols-[repeat(auto-fill,minmax(200px,1fr))]"
+      >
         {
-          ['Astro', 'Tailwind CSS', 'Alpine.js', 'Prettier / ESLint'].map((label) => (
-            <li>
-              <div class="aspect-video rounded-3xl bg-zinc-200" />
-              <p class="mt-3 text-center">{label}</p>
-            </li>
-          ))
+          ['Astro', 'Tailwind CSS', 'Alpine.js', 'Prettier / ESLint', 'dsadadadas', 'dummy2'].map(
+            (label) => (
+              <li class="@container/list-item [--bg-color:red]">
+                <div class="aspect-video rounded-3xl bg-zinc-200" />
+                <p class="bg-[--bg-color] text-center text-[clamp(0.8125rem,5cqw,25px)]">{label}</p>
+              </li>
+            ),
+          )
         }
       </ul>
     </section>
